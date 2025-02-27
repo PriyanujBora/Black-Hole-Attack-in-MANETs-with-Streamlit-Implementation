@@ -24,7 +24,7 @@ This project implements a simulation of Mobile Ad-hoc Networks (MANETs) with bla
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YourUsername/Black-Hole-Attack-in-MANETs-with-Streamlit-Implementation.git
+   git clone https://github.com/PriyanujBora/Black-Hole-Attack-in-MANETs-with-Streamlit-Implementation.git
    cd Black-Hole-Attack-in-MANETs-with-Streamlit-Implementation
    ```
 
@@ -86,4 +86,4 @@ MIT License
 
 ## Contributors
 
-- Priyanuj Bora, Fahim Mashud Barbhuiya, Rohan Jaiswal - Main Developer
+- Priyanuj Bora, Fahim Mashud Barbhuiya, Rohan Jaiswal - Main Developers
