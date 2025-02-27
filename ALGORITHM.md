@@ -1,5 +1,3 @@
-Based on the provided code, here's the algorithm broken down into steps:
-
 ## Main Algorithm: Dolphin-Bee Optimization for MANET Blackhole Detection
 
 ### Initialization Phase
