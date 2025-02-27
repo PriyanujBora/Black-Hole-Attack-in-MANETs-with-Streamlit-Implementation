@@ -489,13 +489,58 @@ def run_streamlit_app():
     
     with st.sidebar:
         st.header("Network Parameters")
-        num_nodes = st.slider("Number of Nodes", 10, 50, 30)
-        comm_range = st.slider("Communication Range", 100, 500, 250)
-        malicious_percentage = st.slider("Malicious Node Percentage", 5, 30, 15)
+        
+        col1, col2 = st.columns([10, 1])
+        with col1:
+            num_nodes = st.slider("Number of Nodes", 10, 50, 30)
+        with col2:
+            st.write("")
+            st.write("")
+            nodes_help = st.button("ℹ️", key="nodes_help")
+        if nodes_help:
+            st.info("The total number of devices in the network. More nodes increase complexity but provide more routing options.")
+        
+        col1, col2 = st.columns([10, 1])
+        with col1:
+            comm_range = st.slider("Communication Range", 100, 500, 250)
+        with col2:
+            st.write("")
+            st.write("")
+            range_help = st.button("ℹ️", key="range_help")
+        if range_help:
+            st.info("Maximum distance (in arbitrary units) that nodes can communicate with each other. Larger values create more connections in the network.")
+        
+        col1, col2 = st.columns([10, 1])
+        with col1:
+            malicious_percentage = st.slider("Malicious Node Percentage", 5, 30, 15)
+        with col2:
+            st.write("")
+            st.write("")
+            malicious_help = st.button("ℹ️", key="malicious_help")
+        if malicious_help:
+            st.info("Percentage of nodes that will act as blackholes (dropping packets instead of forwarding them). Higher values make detection more challenging.")
         
         st.header("Optimization Parameters")
-        population_size = st.slider("Population Size", 10, 60, 40)
-        max_iterations = st.slider("Maximum Iterations", 10, 100, 50)
+        
+        col1, col2 = st.columns([10, 1])
+        with col1:
+            population_size = st.slider("Population Size", 10, 60, 40)
+        with col2:
+            st.write("")
+            st.write("")
+            pop_help = st.button("ℹ️", key="pop_help")
+        if pop_help:
+            st.info("Number of potential routes evaluated in each iteration of the optimization algorithm. Larger population increases diversity of solutions but requires more computation.")
+        
+        col1, col2 = st.columns([10, 1])
+        with col1:
+            max_iterations = st.slider("Maximum Iterations", 10, 100, 50)
+        with col2:
+            st.write("")
+            st.write("")
+            iter_help = st.button("ℹ️", key="iter_help")
+        if iter_help:
+            st.info("Number of optimization cycles to run. More iterations allow the algorithm to refine its detection but take longer to complete.")
         
         run_button = st.button("Run Simulation")
     
