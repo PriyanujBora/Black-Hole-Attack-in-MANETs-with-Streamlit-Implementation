@@ -576,7 +576,7 @@ def run_streamlit_app():
                 detected_blackholes=detected_blackholes)
             st.session_state.has_run = True
         
-        st.experimental_rerun()
+        st.rerun()
 
 if __name__ == "__main__":
     run_streamlit_app()
