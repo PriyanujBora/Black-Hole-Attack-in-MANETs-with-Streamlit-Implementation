@@ -86,4 +86,4 @@ MIT License
 
 ## Contributors
 
-- Priyanuj Bora - Main Developer
+- Priyanuj Bora, Fahim Mashud Barbhuiya, Rohan Jaiswal - Main Developer
