@@ -67,6 +67,8 @@ The web interface allows you to:
    - Bee phase: Uses bee colony optimization to exploit and refine routes
 4. **Blackhole Detection**: Identifies malicious nodes based on behavioral analysis and network metrics
 
+For a detailed explanation of the Dolphin-Bee Optimization algorithm and the blackhole detection process, see the [Algorithm Documentation](ALGORITHM.md).
+
 ## Project Structure
 
 - `manet_dolphin_bee_simulation.py`: Core simulation module
@@ -82,8 +84,8 @@ The web interface allows you to:
 
 ## License
 
-MIT License
+[MIT License](LICENSE)
 
 ## Contributors
 
-- Priyanuj Bora, Fahim Mashud Barbhuiya, Rohan Jaiswal - Main Developers
+- [Priyanuj Bora](https://github.com/PriyanujBora), [Fahim Mashud Barbhuiyan](https://github.com/Fahim98), [Rohan Jaiswal](https://github.com/RohanJaiswall) - Main Developers
