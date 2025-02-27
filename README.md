@@ -88,4 +88,4 @@ For a detailed explanation of the Dolphin-Bee Optimization algorithm and the bla
 
 ## Contributors
 
-- [Priyanuj Bora](https://github.com/PriyanujBora), [Fahim Mashud Barbhuiyan](https://github.com/Fahim98), [Rohan Jaiswal](https://github.com/RohanJaiswall) - Main Developers
+[Priyanuj Bora](https://github.com/PriyanujBora), [Fahim Mashud Barbhuiyan](https://github.com/Fahim98), [Rohan Jaiswal](https://github.com/RohanJaiswall) - Main Developers
