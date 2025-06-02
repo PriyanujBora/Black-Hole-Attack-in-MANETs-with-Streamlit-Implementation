@@ -1236,6 +1236,29 @@ def main():
                                  height=400)
                 fig_time.update_layout(showlegend=False)
                 st.plotly_chart(fig_time, use_container_width=True)
+            
+            # Accuracy comparison (new addition)
+            col5, col6 = st.columns(2)
+            
+            with col5:
+                # Accuracy comparison
+                accuracy_data = []
+                for algo, metrics in results_data['results'].items():
+                    accuracy = (metrics['true_positives'] + metrics['true_negatives']) / (
+                        metrics['true_positives'] + metrics['false_positives'] + 
+                        metrics['false_negatives'] + metrics['true_negatives']
+                    )
+                    accuracy_data.append({
+                        'Algorithm': algo,
+                        'Accuracy': accuracy
+                    })
+                df_accuracy = pd.DataFrame(accuracy_data)
+                fig_accuracy = px.bar(df_accuracy, x='Algorithm', y='Accuracy', 
+                                     title='Accuracy Comparison',
+                                     color='Algorithm',
+                                     height=400)
+                fig_accuracy.update_layout(showlegend=False)
+                st.plotly_chart(fig_accuracy, use_container_width=True)
         
         with tab4:
             st.header("Detection Results Analysis")
