@@ -1187,20 +1187,24 @@ def main():
                 st.plotly_chart(fig_precision, use_container_width=True)
             
             with col2:
-                # Recall comparison
-                recall_data = []
+                # Accuracy comparison
+                accuracy_data = []
                 for algo, metrics in results_data['results'].items():
-                    recall_data.append({
+                    accuracy = (metrics['true_positives'] + metrics['true_negatives']) / (
+                        metrics['true_positives'] + metrics['false_positives'] + 
+                        metrics['false_negatives'] + metrics['true_negatives']
+                    )
+                    accuracy_data.append({
                         'Algorithm': algo,
-                        'Recall': metrics['recall']
+                        'Accuracy': accuracy
                     })
-                df_recall = pd.DataFrame(recall_data)
-                fig_recall = px.bar(df_recall, x='Algorithm', y='Recall', 
-                                   title='Recall Comparison',
-                                   color='Algorithm',
-                                   height=400)
-                fig_recall.update_layout(showlegend=False)
-                st.plotly_chart(fig_recall, use_container_width=True)
+                df_accuracy = pd.DataFrame(accuracy_data)
+                fig_accuracy = px.bar(df_accuracy, x='Algorithm', y='Accuracy', 
+                                     title='Accuracy Comparison',
+                                     color='Algorithm',
+                                     height=400)
+                fig_accuracy.update_layout(showlegend=False)
+                st.plotly_chart(fig_accuracy, use_container_width=True)
             
             # F1-Score and Detection Time
             col3, col4 = st.columns(2)
@@ -1241,24 +1245,20 @@ def main():
             col5, col6 = st.columns(2)
             
             with col5:
-                # Accuracy comparison
-                accuracy_data = []
+                # Recall comparison
+                recall_data = []
                 for algo, metrics in results_data['results'].items():
-                    accuracy = (metrics['true_positives'] + metrics['true_negatives']) / (
-                        metrics['true_positives'] + metrics['false_positives'] + 
-                        metrics['false_negatives'] + metrics['true_negatives']
-                    )
-                    accuracy_data.append({
+                    recall_data.append({
                         'Algorithm': algo,
-                        'Accuracy': accuracy
+                        'Recall': metrics['recall']
                     })
-                df_accuracy = pd.DataFrame(accuracy_data)
-                fig_accuracy = px.bar(df_accuracy, x='Algorithm', y='Accuracy', 
-                                     title='Accuracy Comparison',
-                                     color='Algorithm',
-                                     height=400)
-                fig_accuracy.update_layout(showlegend=False)
-                st.plotly_chart(fig_accuracy, use_container_width=True)
+                df_recall = pd.DataFrame(recall_data)
+                fig_recall = px.bar(df_recall, x='Algorithm', y='Recall', 
+                                   title='Recall Comparison',
+                                   color='Algorithm',
+                                   height=400)
+                fig_recall.update_layout(showlegend=False)
+                st.plotly_chart(fig_recall, use_container_width=True)
         
         with tab4:
             st.header("Detection Results Analysis")
